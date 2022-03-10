@@ -1,0 +1,26 @@
+{
+  "name": "vue-touch-zoom",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "touch",
+    "zoom",
+    "缩放",
+    "vue",
+    "shrink",
+    "grow",
+    "move",
+    "phone",
+    "移动端"
+  ],
+  "author": "yuchenbin",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yuchenbin1/vue-touch-zoom"
+  }
+}
