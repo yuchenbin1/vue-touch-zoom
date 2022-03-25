@@ -8,7 +8,6 @@
 
 <script>
 export default {
-    name: 'TouchZoom',
     props: {
         maxScale: {//最大比例放大
             required: false,
@@ -53,7 +52,7 @@ export default {
             this.setTransform();
         },
         touchstart (event) {
-            event.preventDefault();
+            // event.preventDefault();//注释掉否则会阻止touchStart事件
             if (event.touches.length === 1) {
             // 当前屏幕上只有一个触摸点的时候就是移动
                 this.moveStart(event.touches[0].clientX, event.touches[0].clientY);
@@ -223,5 +222,9 @@ export default {
 <style lang="less" scoped>
 .touchZoom {
     overflow: hidden;
+    .transformDom {
+        width: 100%;
+        height: 100%;
+    }
 }
 </style>
