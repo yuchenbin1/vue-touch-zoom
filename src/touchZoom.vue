@@ -64,7 +64,6 @@ export default {
             }
         },
         touchmove (event) {
-            console.log('触发移动');
             event.preventDefault();
             if (event.touches.length === 1 && this.touchType === 'move') {
             // 如果屏幕上只有一个触摸点而且类型是移动的时候才是移动
@@ -104,8 +103,6 @@ export default {
                 scaleCenter[0] / this.$refs.transformDom.offsetWidth,
                 scaleCenter[1] / this.$refs.transformDom.offsetHeight
             ];
-            console.log('2222');
-            console.log(this.scaleTranslateProportion);
         },
         // 进行缩放操作
         scale(touchList) {
@@ -162,18 +159,41 @@ export default {
         },
         // 更改移动缩放的效果
         setTransform() {
-            // console.log(this.transformData);
+            // 边界限制
+            if (this.transformData.scale<1) {
+                if (this.transformData.x<0) {
+                    this.transformData.x = 0;
+                }
+                if (this.transformData.y<0) {
+                    this.transformData.y = 0;
+                }
+                let maxX = this.$refs.touchZoom.offsetWidth - (this.$refs.transformDom.offsetWidth * this.transformData.scale);
+                let maxY = this.$refs.touchZoom.offsetHeight - (this.$refs.transformDom.offsetHeight * this.transformData.scale);
 
-            console.log(`
-              translate(${this.transformData.x || 0}px, ${this.transformData.y || 0}px)
-              scale(${this.transformData.scale || 0}, ${this.transformData.scale || 0})`);
-
-            console.log('11111');
-            // 先平移再缩放
-            console.log(this.$refs.transformDom.style.transform);
-            this.$refs.transformDom.style.height = '100px';
+                if (this.transformData.x> maxX) {
+                    this.transformData.x = maxX;
+                }
+                if (this.transformData.y> maxY) {
+                    this.transformData.y = maxY;
+                }
+            } else {
+                if (this.transformData.x>0) {
+                    this.transformData.x = 0;
+                }
+                if (this.transformData.y>0) {
+                    this.transformData.y = 0;
+                }
+                let minX = this.$refs.touchZoom.offsetWidth - (this.$refs.transformDom.offsetWidth * this.transformData.scale);
+                let minY = this.$refs.touchZoom.offsetHeight - (this.$refs.transformDom.offsetHeight * this.transformData.scale);
+                if (this.transformData.x< minX) {
+                    this.transformData.x = minX;
+                }
+                if (this.transformData.y< minY) {
+                    this.transformData.y = minY;
+                }
+            }
+            this.$refs.transformDom.style.height = '100%';
             this.$refs.transformDom.style.transform = `translate(${this.transformData.x || 0}px, ${this.transformData.y || 0}px) scale(${this.transformData.scale || 0}, ${this.transformData.scale || 0})`;
-            console.log(this.$refs.transformDom.style.transform);
         },
         // 放大操作
         enlargeScale(size = 1.2) {
@@ -205,6 +225,22 @@ export default {
             if (this.transformData.scale < this.minScale) {
                 this.doscale(this.minScale / this.transformData.scale, false);
             }
+        },
+        reset() {
+            return new Promise((resolve) => {
+                this.transformData = {
+                    x: 0, //x轴偏移量
+                    y: 0, //y轴偏移量
+                    scale: 1//缩放比例
+                };
+                this.lastTransformData = {
+                    x: 0,
+                    y: 0,
+                    distance: 0//两指之间的距离
+                };
+                this.$refs.transformDom.style.transform = 'translate(0px, 0px) scale(1)';
+                resolve();
+            });
         },
         getTransformData () {
             return this.transformData;
