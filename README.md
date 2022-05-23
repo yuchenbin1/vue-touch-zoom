@@ -1,6 +1,8 @@
 # Introduce
 
-基于vue2.0，实现移动端容器内缩放与位移
+基于vue2.0，实现移动端容器内缩放与位移，缩放基于两指中心
+
+Based on vue2.0, it realizes the scaling and displacement in the mobile terminal container, and the scaling is based on the two-finger center
 
 
 
@@ -46,7 +48,7 @@ export default{
 
 ```html
 <TouchZoom>
-   <div slot="innerDom"></div>
+   <div></div>
 </TouchZoom>
 ```
 
@@ -56,7 +58,7 @@ TouchZoom is external container,you can use `slot` to add inner content.
 
 ```html
 <TouchZoom :maxScale="2" :minScale="0.5">
-   <div slot="innerDom"></div>
+   <div></div>
 </TouchZoom>
 ```
 
