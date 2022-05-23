@@ -6,6 +6,8 @@ Based on vue2.0, it realizes the scaling and displacement in the mobile terminal
 
 
 
+![](https://raw.githubusercontent.com/yuchenbin1/vue-touch-zoom/main/images/petal_20220523_143528_.gif)
+
 # Getting started
 
 1.Install the plugin
