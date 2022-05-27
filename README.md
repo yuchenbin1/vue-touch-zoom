@@ -6,7 +6,7 @@ Based on vue2.0, it realizes the scaling and displacement in the mobile terminal
 
 
 
-![](https://raw.githubusercontent.com/yuchenbin1/vue-touch-zoom/main/images/petal_20220523_143528_.gif)
+![](https://uploader.shimo.im/f/cfdDahiJBAx0XWqI.gif?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTM2MTc3NzcsImZpbGVHVUlEIjoiWUdrdjM5anhXeXlwQ3Z2ZCIsImlhdCI6MTY1MzYxNzQ3NywidXNlcklkIjozODU3MTgzN30.66Md4R9fogqe0hoOZWoO0VIjHjR8crOsT7QV47K4QiA)
 
 # Getting started
 

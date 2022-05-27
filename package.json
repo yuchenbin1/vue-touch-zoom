@@ -1,6 +1,6 @@
 {
   "name": "vue-touch-zoom",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,9 @@
     "grow",
     "move",
     "phone",
-    "移动端"
+    "移动端",
+    "vue-touch",
+    "vue-zoom"
   ],
   "author": "yuchenbin",
   "license": "ISC",
