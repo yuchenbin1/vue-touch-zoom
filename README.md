@@ -6,7 +6,7 @@ Based on vue2.0, it realizes the scaling and displacement in the mobile terminal
 
 
 
-![](https://uploader.shimo.im/f/cfdDahiJBAx0XWqI.gif?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2NTM2MTc3NzcsImZpbGVHVUlEIjoiWUdrdjM5anhXeXlwQ3Z2ZCIsImlhdCI6MTY1MzYxNzQ3NywidXNlcklkIjozODU3MTgzN30.66Md4R9fogqe0hoOZWoO0VIjHjR8crOsT7QV47K4QiA)
+![](http://img.souche.com/f2e/036d5220df9a7c123f155a4bcd34f574.gif)
 
 # Getting started
 
